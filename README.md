@@ -56,3 +56,6 @@ You can modify the `dns_servers_name` and `dns_servers` arrays in the script to 
 - The script only modifies the DNS settings for the currently active wireless connection.
 - You need root privileges to modify network settings.
 - After changing the DNS, the script will automatically restart the network connection to apply the changes.
+
+## Contributing
+Waiting for your pull requests :)
