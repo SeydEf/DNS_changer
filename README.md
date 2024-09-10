@@ -20,12 +20,12 @@ This Bash script provides a simple interactive menu to change the DNS settings f
 
 1. Make the script executable:
    ```
-   chmod +x dns_changer.sh
+   chmod +x dns.sh
    ```
 
-2. Run the script with root privileges:
+2. Run the script:
    ```
-   sudo ./dns_changer.sh
+   ./dns.sh
    ```
 
 3. Use the UP and DOWN arrow keys to navigate through the DNS server options.
@@ -54,7 +54,6 @@ You can modify the `dns_servers_name` and `dns_servers` arrays in the script to 
 ## Notes
 
 - The script only modifies the DNS settings for the currently active wireless connection.
-- You need root privileges to modify network settings.
 - After changing the DNS, the script will automatically restart the network connection to apply the changes.
 
 ## Contributing
