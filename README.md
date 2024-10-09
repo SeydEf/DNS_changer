@@ -1,10 +1,10 @@
 # DNS Changer Script
 
-This Bash script provides a simple interactive menu to change the DNS settings for your active wireless connection on Linux systems using NetworkManager.
+This repository contains scripts for changing DNS settings on both Linux and Windows systems. The scripts provide an interactive menu to select predefined DNS servers or reset to default settings.
 
 ## Features
 
-- Displays the current active wireless connection name
+- Displays the current active network connection name
 - Shows the current DNS settings
 - Provides a list of predefined DNS servers to choose from
 - Allows easy selection using arrow keys
@@ -13,26 +13,38 @@ This Bash script provides a simple interactive menu to change the DNS settings f
 
 ## Prerequisites
 
-- Linux system with NetworkManager
+### Linux
+- Bash shell
+- NetworkManager
 - `nmcli` command-line tool (usually comes pre-installed with NetworkManager)
+
+### Windows
+- Windows 10 or later
+- PowerShell 5.1 or later
 
 ## Usage
 
+### Linux
 1. Make the script executable:
    ```
    chmod +x dns.sh
    ```
-
 2. Run the script:
    ```
    ./dns.sh
    ```
-
 3. Use the UP and DOWN arrow keys to navigate through the DNS server options.
-
 4. Press ENTER to select a DNS server.
 
-5. The script will update the DNS settings and restart the connection.
+### Windows
+1. Open PowerShell as Administrator
+2. Navigate to the directory containing the script
+3. Run the script:
+   ```
+   .\dns.ps1
+   ```
+4. Use the UP and DOWN arrow keys to navigate through the DNS server options.
+5. Press ENTER to select a DNS server.
 
 ## Available DNS Servers
 
@@ -49,12 +61,19 @@ This Bash script provides a simple interactive menu to change the DNS settings f
 
 ## Customization
 
+### Linux
 You can modify the `dns_servers_name` and `dns_servers` arrays in the script to add, remove, or change the available DNS options.
+
+### Windows
+You can modify the `$dns_servers` hashtable in the script to add, remove, or change the available DNS options.
 
 ## Notes
 
-- The script only modifies the DNS settings for the currently active wireless connection.
-- After changing the DNS, the script will automatically restart the network connection to apply the changes.
+- The Linux script modifies the DNS settings for the currently active wireless connection.
+- The Windows script can modify DNS settings for any active network adapter, with a preference for Wi-Fi connections.
+- After changing the DNS, both scripts will automatically restart the network connection to apply the changes.
+- On Windows, running the script as administrator will make permanent changes, while running it without admin privileges will make temporary changes that reset after a reboot or network change.
 
 ## Contributing
-Waiting for your pull requests :)
+
+Contributions are welcome! Please feel free to submit pull requests with improvements or additional features.
